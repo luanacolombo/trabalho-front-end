@@ -21,26 +21,34 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 };*/
 
 const App = () => (
-  <div className='container-fluid p-0'>
+  <div className='container-fluid p-0' style={{backgroundColor: "#eadaea"}}>
     <Container>
     <Row>
       <div className="mx-auto col-md-4 d-flex vh-100">
         <main className="form-signin w-100 m-auto">
           <Form>
-            <Image className="mb-4 img-thumbnail" src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"></Image>
-            <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
+            <Image className="mb-4 img-thumbnail" src="/logo.jpeg"></Image>
+            <h1 className="h3 mb-3 fw-normal text-center">Acesse sua conta</h1>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Control type="email" placeholder="E-mail" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control type="password" placeholder="Senha" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
+              <Form.Check type="checkbox" label="Lembrar-me" />
             </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
+            <div style={{display:"flex", flexDirection:"row", justifyContent:"space-around"}}>
+            <Button variant='' className="btn btn-outline-dark" type="submit">
+              Confirmar
             </Button>
+            <Button variant='' className="btn btn-outline-dark" type="submit">
+              Esqueci minha senha
+            </Button>
+            <Button variant='' className="btn btn-outline-dark" type="submit">
+              Criar conta
+            </Button>
+            </div>
           </Form>
         </main>
       </div>
