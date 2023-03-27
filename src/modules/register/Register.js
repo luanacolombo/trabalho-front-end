@@ -24,10 +24,7 @@ const Register = () => {
                             </Form.Group>
                             <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
                                 <Button variant='' className="btn btn-outline-dark" type="submit">
-                                    Entrar
-                                </Button>
-                                <Button variant='' className="btn btn-outline-dark" type="submit">
-                                    Esqueci minha senha
+                                    Voltar
                                 </Button>
                                 <Button variant='' className="btn btn-outline-dark" type="submit">
                                     Criar conta
