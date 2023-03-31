@@ -11,7 +11,7 @@ export default function App() {
     <Routes>
       <Route path="/">
         <Route index element={<Login />} />
-        <Route path="register" element={<Register />} />
+        <Route path="/register" element={<Register />} />
         <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>
