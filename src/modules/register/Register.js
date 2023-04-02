@@ -1,11 +1,37 @@
 
-import React from 'react';
-import { Container, Form, Image, Row } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Form, Row } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase';
+
+
+
 
 
 const Register = () => {
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const signUp = async (e) => {
+        e.preventDefault()
+        await createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log(user);
+                navigate("/")
+
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage);
+            });
+
+    }
+
     return (<div className='container-fluid p-0' style={{ backgroundColor: "#eadaea" }}>
         <Container>
             <Row>
@@ -17,13 +43,13 @@ const Register = () => {
                                 <Form.Control type="text" placeholder="Nome" />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Control type="email" placeholder="E-mail" />
+                                <Form.Control type="email" placeholder="E-mail" onChange={e => setEmail(e.currentTarget.value)} />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
-                                <Form.Control type="password" placeholder="Senha" />
+                                <Form.Control type="password" placeholder="Senha" onChange={e => setPassword(e.currentTarget.value)} />
                             </Form.Group>
                             <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
-                                <Button variant='' className="btn btn-outline-dark" type="submit">
+                                <Button variant='' onClick={signUp} className="btn btn-outline-dark" type="submit">
                                     Confirmar
                                 </Button>
                                 <Link className="btn btn-outline-dark" to="/">Voltar</Link>
