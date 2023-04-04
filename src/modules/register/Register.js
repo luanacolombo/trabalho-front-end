@@ -16,8 +16,8 @@ const Register = () => {
     const [password, setPassword] = useState('');
 
     const signUp = async (e) => {
-        e.preventDefault()
-        await createUserWithEmailAndPassword(auth, email, password)
+        e.preventDefault() //desabilita a execução até que seja concluído a tarefa
+        await createUserWithEmailAndPassword(auth, email, password) //"await" aguarda pra ir adiante na execução
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);

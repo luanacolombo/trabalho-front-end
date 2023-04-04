@@ -13,7 +13,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
 
     const onLogin = (e) => {
-        e.preventDefault();
+        e.preventDefault(); //desabilita a execução até que seja concluído a tarefa
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
