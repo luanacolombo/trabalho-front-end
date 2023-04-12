@@ -1,20 +1,20 @@
 import React from 'react';
-import { Image } from 'react-bootstrap';
 
-const Home = () => {
+const ListaPet = () => {
     return (
         <div>
             <div className='container'>
                 <div className='row'>
-                    <div className='col-md-6 mx-auto '>
-                        <Image className="img-fluid" src="/emconstrucao.png"></Image>
+
+                    <div className="mx-auto col-md-4 mt-5">
+                        <h1 className="h3 mb-3 fw-normal text-center">Lista Pet!</h1>
+
                     </div>
                 </div>
-
             </div>
         </div>
     );
 }
 
 
-export default Home;
+export default ListaPet;

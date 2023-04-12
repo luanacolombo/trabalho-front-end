@@ -18,6 +18,7 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
+                localStorage.setItem('uid', user.uid)
                 navigate("/home")
                 console.log(user);
             })
@@ -51,9 +52,9 @@ const Login = () => {
                                     <Button variant='' onClick={onLogin} className="btn btn-outline-dark" type="submit">
                                         Entrar
                                     </Button>
-                                    <Button variant='' className="btn btn-outline-dark" type="submit">
+                                    <Link className="btn btn-outline-dark" to="/recover">
                                         Esqueci minha senha
-                                    </Button>
+                                    </Link>
                                     <Link className="btn btn-outline-dark" to="/register">Criar conta</Link>
                                 </div>
                             </Form>

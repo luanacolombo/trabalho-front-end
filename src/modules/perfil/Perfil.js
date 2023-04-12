@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image } from 'react-bootstrap';
 
-const Home = () => {
+const Perfil = () => {
     return (
         <div>
             <div className='container'>
@@ -17,4 +17,4 @@ const Home = () => {
 }
 
 
-export default Home;
+export default Perfil;
